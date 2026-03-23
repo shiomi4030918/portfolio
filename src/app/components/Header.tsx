@@ -30,7 +30,7 @@ export function Header() {
             onClick={() => scrollToSection("home")}
             className="text-xl text-transparent bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text hover:from-cyan-300 hover:to-emerald-300 transition-all"
           >
-            Aki Shiomi Portfolio Site
+            Aki Shiomi Portfolio Site 
           </button>
 
           {/* Desktop Navigation */}
