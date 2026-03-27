@@ -12,7 +12,8 @@ body,
 }
 
 body {
-  touch-action: none;
+  /* スクロールを殺さない（モバイルで重要） */
+  touch-action: auto;
 }
 
 #app {
@@ -66,5 +67,7 @@ body {
   left: 0;
   overflow: hidden;
   z-index: 0;
+  /* キャンバスがタッチ/スクロールを奪わないようにする */
+  pointer-events: none;
 }
 
