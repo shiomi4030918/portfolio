@@ -130,7 +130,7 @@ export function Projects() {
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <h2 className="section-title text-4xl mb-4 text-center text-transparent bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text">
-          実績・活動
+          Projects
         </h2>
         <p className="section-lead text-slate-400 text-center mb-12 max-w-2xl mx-auto">
           技術力だけでなく、プロジェクト管理やチーム運営にも携わってきた主な実績です。
