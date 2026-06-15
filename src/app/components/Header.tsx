@@ -23,12 +23,12 @@ export function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-cyan-500/20">
+    <header className="site-header fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-cyan-500/20">
       <nav className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection("home")}
-            className="text-xl text-transparent bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text hover:from-cyan-300 hover:to-emerald-300 transition-all"
+            className="site-logo text-xl text-transparent bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text hover:from-cyan-300 hover:to-emerald-300 transition-all"
           >
             Aki Shiomi Portfolio Site 
           </button>
@@ -39,7 +39,7 @@ export function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-slate-300 hover:text-cyan-400 transition-colors relative group"
+                className="site-nav-link text-slate-300 hover:text-cyan-400 transition-colors relative group"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-emerald-400 group-hover:w-full transition-all duration-300"></span>
@@ -64,7 +64,7 @@ export function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left py-2 text-slate-300 hover:text-cyan-400 transition-colors"
+                className="site-nav-link block w-full text-left py-2 text-slate-300 hover:text-cyan-400 transition-colors"
               >
                 {item.label}
               </button>

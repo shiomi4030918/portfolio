@@ -2,82 +2,118 @@
 @import './tailwind.css';
 @import './theme.css';
 
-/* Tubes / Cursor Hero */
-html,
-body,
-#app {
-  margin: 0;
+/* Hero */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 固定ヘッダー分の余白 */
+  padding: 5.5rem 1.5rem 2rem;
+  font-family: "Rajdhani", "M PLUS 1p", sans-serif;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-canvas,
+.hero-bg-fallback {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
 }
 
-body {
-  /* スクロールを殺さない（モバイルで重要） */
-  touch-action: auto;
-}
-
-#app {
-  height: 100vh;
-  font-family: "Montserrat", serif;
-}
-
-#app a {
-  text-decoration: none;
-  color: #fff;
-}
-
 .hero {
   position: relative;
-  height: 100%;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  z-index: 1;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 56rem;
+  text-align: center;
 }
 
 .hero h1,
-.hero h2 {
+.hero h2,
+.hero-tagline {
   margin: 0;
   padding: 0;
   color: white;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 1);
-  line-height: 100%;
   user-select: none;
 }
 
 .hero h1 {
-  font-size: 80px;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  text-shadow:
+    0 0 8px rgba(34, 211, 238, 0.9),
+    0 0 24px rgba(34, 211, 238, 0.45),
+    0 0 48px rgba(16, 185, 129, 0.25);
 }
 
 .hero h2 {
-  font-size: 60px;
-  font-weight: 500;
+  font-family: "Rajdhani", sans-serif;
+  font-size: clamp(1rem, 2.8vw, 1.875rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  max-width: 100%;
+  color: rgba(224, 255, 252, 0.95);
+  text-shadow:
+    0 0 6px rgba(34, 211, 238, 0.6),
+    0 0 18px rgba(16, 185, 129, 0.3);
 }
 
-#canvas {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: 0;
+.hero-tagline {
+  font-family: "Rajdhani", "M PLUS 1p", sans-serif;
+  color: rgba(167, 243, 208, 0.92);
+  line-height: 1.5;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-shadow:
+    0 0 6px rgba(16, 185, 129, 0.5),
+    0 0 16px rgba(34, 211, 238, 0.2);
 }
 
-/* タッチ主体端末: Tubesの代わり（pointermoveが不安定なため）。触ってもカーソル追従はしない */
+.hero a {
+  margin-top: 0.25rem;
+  font-family: "Rajdhani", sans-serif;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.hero a:hover {
+  color: #67e8f9;
+  text-shadow:
+    0 0 10px rgba(34, 211, 238, 0.9),
+    0 0 24px rgba(34, 211, 238, 0.5);
+}
+
+/* タッチ主体端末: Tubesの代わり（pointermoveが不安定なため） */
 .hero-bg-fallback {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-  overflow: hidden;
   background: #050510;
   pointer-events: none;
 }
@@ -127,3 +163,75 @@ body {
   }
 }
 
+/* Site typography (below hero) */
+.site-header .site-logo {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.site-header .site-nav-link {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-lead {
+  font-family: "Rajdhani", "M PLUS 1p", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.75;
+}
+
+.card-title {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.card-subtitle {
+  font-family: "Rajdhani", "M PLUS 1p", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.card-body {
+  font-family: "Rajdhani", "M PLUS 1p", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.75;
+}
+
+.skill-item {
+  font-family: "Rajdhani", "M PLUS 1p", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.project-tag {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-footer-text {
+  font-family: "Rajdhani", "M PLUS 1p", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.site-button {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}

@@ -119,24 +119,21 @@ export function Hero() {
   }, [interactiveTubes]);
 
   return (
-    <section id="home" className="relative overflow-hidden min-h-screen">
-      <div id="app">
+    <section id="home" className="hero-section">
+      <div className="hero-background" aria-hidden>
         {interactiveTubes ? (
-          <canvas id="canvas" ref={canvasRef} />
+          <canvas className="hero-canvas" ref={canvasRef} />
         ) : (
-          <div className="hero-bg-fallback" aria-hidden />
+          <div className="hero-bg-fallback" />
         )}
-        <div className="hero">
-          <h1>Aki Shiomi</h1>
-          <h2>Software Engineer</h2>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.framer.com/@kevin-levron/"
-          >
-            portfolio
-          </a>
-        </div>
+      </div>
+      <div className="hero">
+        <h1>Aki Shiomi</h1>
+        <h2>Student Entrepreneur / Software Engineer</h2>
+        <p className="hero-tagline">技術とビジネスをつなぐ開発者</p>
+        <a target="_blank" rel="noreferrer" href="https://bondly.jp">
+          Bondly合同会社
+        </a>
       </div>
     </section>
   );
